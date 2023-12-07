@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: rgb(189, 136, 189);
+    height: 70px;
+    width: 100%;
+}
+
+.navheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
+}
+
