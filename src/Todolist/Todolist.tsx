@@ -30,7 +30,6 @@ const Todolist = () => {
         <div className="form_container">
             <form className="entertask_form_container" onSubmit={handleSubmit}>
                 <input type="text" placeholder="Add a Task" value={todo} onChange={handleInput}/>
-
                 <div className="task-divider-container">
                     <button className="addtask_button" type="submit" >Add</button>
                 </div>
@@ -41,7 +40,7 @@ const Todolist = () => {
         <div className="list-container1">
             <table className="header-table">
                 <tr>
-                    <th> Tasks </th>
+                    <th><u> TO - DO - LIST </u></th>
                 </tr>
             </table>
         </div>
