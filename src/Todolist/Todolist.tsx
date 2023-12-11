@@ -1,9 +1,5 @@
 import "./Todolist.css"
-import React, { useState } from "react";
-
-interface TodolistProps {
-    tasks: string[];
-}
+import { useState } from "react";
 
 const Todolist = () => {
 
@@ -23,14 +19,20 @@ const Todolist = () => {
         } 
     }
 
+    const handleComplete = (index) => {
+        const updateTask = [...tasks];
+        updateTask.splice(index, 1);
+        setTasks(updateTask);
+    }
+
     return (
     <>
         <div className="form_container">
             <form className="entertask_form_container" onSubmit={handleSubmit}>
-                <input type="text" placeholder="Add a task" value={todo} onChange={handleInput}/>
+                <input type="text" placeholder="Add a Task" value={todo} onChange={handleInput}/>
 
                 <div className="task-divider-container">
-                    <button className="addtask_button" type="submit">Add</button>
+                    <button className="addtask_button" type="submit" >Add</button>
                 </div>
 
             </form>
@@ -39,7 +41,7 @@ const Todolist = () => {
         <div className="list-container1">
             <table className="header-table">
                 <tr>
-                    <th> Task </th>
+                    <th> Tasks </th>
                 </tr>
             </table>
         </div>
@@ -48,13 +50,13 @@ const Todolist = () => {
             <table className="detail-table"> {tasks.map((task, index) => (
                 <tr key={index}>
                     <td> {task} </td>
+                    <td> <button className="complete_button" onClick={() => handleComplete(index)}> Completed </button> </td>
                 </tr>
                 ))}
             </table>
         </div>
-
     </>
-    )
+    );
 };
 
 export default Todolist
